@@ -44,8 +44,8 @@ public class RecomendadorDeVecinos implements Recomendador {
 
 			Recomendacion rec = new Recomendacion(u);
 
-			Double suma = 0.0;
 			for(Long i : datos.getItemsUnicos()){
+				Double suma = 0.0;
 				if(!datos.getPreferenciasUsuario(u).containsKey(i)){
 					for(Long v : vecinos){
 						Map<Long, Double> items = datos.getPreferenciasItem(i);

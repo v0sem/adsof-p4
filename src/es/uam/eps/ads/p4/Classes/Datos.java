@@ -87,7 +87,7 @@ public class Datos implements ModeloDatos{
 		}
 
 		for(Long user : idUsuarios) {
-			items.put(item, getPreferenciasUsuario(user).get(item));
+			items.put(user, getPreferenciasUsuario(user).get(item));
 		}
 
 		return Collections.unmodifiableMap(items);

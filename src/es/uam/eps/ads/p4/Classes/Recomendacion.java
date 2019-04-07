@@ -28,7 +28,9 @@ public class Recomendacion {
 		ArrayList<Tupla> nueva = new ArrayList<Tupla>();
 
 		for(int j=0; j<i; j++){
-			nueva.add(recomendaciones.remove(recomendaciones.size()-1));
+			nueva.add(recomendaciones.remove(0));
 		}
+		
+		recomendaciones = nueva;
 	}
 }
