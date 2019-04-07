@@ -56,6 +56,9 @@ public class Datos implements ModeloDatos{
 				allPreferences.put(usuario, map);
 			}
 		}
+		
+		br.close();
+		fr.close();
 	}
 	
 	public Map<Long, Double> getPreferenciasUsuario(Long usuario){

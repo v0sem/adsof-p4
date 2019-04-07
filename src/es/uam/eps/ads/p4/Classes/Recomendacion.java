@@ -6,8 +6,8 @@ import java.util.List;
 
 public class Recomendacion {
 
-	Long usuario;
-	List<Tupla> recomendaciones;
+	private Long usuario;
+	private List<Tupla> recomendaciones;
 
 	public Recomendacion(Long u) {
 		this.usuario = u;
@@ -17,6 +17,14 @@ public class Recomendacion {
 	public String toString() {
 		return "Recomendacion [usuario=" + usuario + ", recomendaciones ="
 				+ recomendaciones;
+	}
+	
+	public List<Tupla> getRecomendaciones() {
+		return recomendaciones;
+	}
+
+	public Long getUsuario() {
+		return usuario;
 	}
 
 	public void insertRecommendation(Long id, Double scr) {
@@ -36,4 +44,5 @@ public class Recomendacion {
 		
 		recomendaciones = nueva;
 	}
+	
 }

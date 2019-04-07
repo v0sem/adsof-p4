@@ -4,18 +4,16 @@ import es.uam.eps.ads.p4.Exceptions.RecomendacionInvalida;
 import es.uam.eps.ads.p4.Interfaces.ModeloDatos;
 import es.uam.eps.ads.p4.Interfaces.Recomendador;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class RecomendadorDePopularidad implements Recomendador {
 
 	private ModeloDatos datos;
-	private Map<Long, Integer> popularidad;
 	
 	public RecomendadorDePopularidad(ModeloDatos mod) {
 		datos = mod;
-		popularidad = new HashMap<Long, Integer>();
 	}
+	
 	public Recomendacion recomienda(Long u, int longitudRecomendacion) throws RecomendacionInvalida {
 		if(longitudRecomendacion <= 0)
 			throw new RecomendacionInvalida(0);

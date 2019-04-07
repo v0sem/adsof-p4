@@ -25,4 +25,8 @@ public class Tupla implements Comparable<Tupla>{
 		return t.score.compareTo(this.score);
 	}
 
+	public Long getItemId() {
+		return itemId;
+	}
+
 }
