@@ -22,10 +22,17 @@ public class RecomendadorDePopularidad implements Recomendador {
 		else if(!this.datos.isInIdUsuarios(u))
 			throw new RecomendacionInvalida(1);
 		
+		Recomendacion rec = new Recomendacion(u); 
+		
 		for(Long i : datos.getItemsUnicos()) {
-			Map<Long, Double> items = datos.getPreferenciasItem(i);
-			popularidad.put(i, items.size());
+			if(!datos.getPreferenciasUsuario(u).containsKey(i)) {
+				Map<Long, Double> items = datos.getPreferenciasItem(i);
+				rec.insertRecommendation(i, (double) items.size());
+			}
 		}
+		
+		rec.onlyBest(longitudRecomendacion);
+		return rec;
 	}
 
 }

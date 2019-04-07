@@ -87,7 +87,9 @@ public class Datos implements ModeloDatos{
 		}
 
 		for(Long user : idUsuarios) {
-			items.put(user, getPreferenciasUsuario(user).get(item));
+			Double rating = getPreferenciasUsuario(user).get(item);
+			if(rating != null)
+				items.put(user, rating);
 		}
 
 		return Collections.unmodifiableMap(items);

@@ -26,7 +26,10 @@ public class Recomendacion {
 	public void onlyBest(int i){
 		Collections.sort(recomendaciones);
 		ArrayList<Tupla> nueva = new ArrayList<Tupla>();
-
+		
+		if(i > recomendaciones.size())
+			i = recomendaciones.size();
+		
 		for(int j=0; j<i; j++){
 			nueva.add(recomendaciones.remove(0));
 		}

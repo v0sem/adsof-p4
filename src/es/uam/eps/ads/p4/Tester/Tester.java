@@ -15,8 +15,10 @@ public class Tester {
 		
 		try{
 			mod.leeFicheroPreferencias("txt/PruebaTraining.txt");
-			Recomendador rec = new RecomendadorDeVecinos(mod, 2);
-			System.out.println(rec.recomienda(190L, 3));
+			Recomendador rec1 = new RecomendadorDeVecinos(mod, 2);
+			System.out.println(rec1.recomienda(190L, 3));
+			Recomendador rec2 = new RecomendadorDePopularidad(mod);
+			System.out.println(rec2.recomienda(175L, 3));
 		}
 		catch(IOException | RecomendacionInvalida f){
 			System.out.println(f);
